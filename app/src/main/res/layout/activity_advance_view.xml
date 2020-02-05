@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".advanceview.AdvanceViewActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/listview_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="List View"/>
+        <Button
+            android:id="@+id/gridview_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Grid View"/>
+        <Button
+            android:id="@+id/recyclerview_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recycler View"/>
+        <Button
+            android:id="@+id/cardview_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Card View"/>
+        <Button
+            android:id="@+id/viewpager_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Pager"/>
+        <Button
+            android:id="@+id/bottomNavigation_view_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BottomNavigation View"/>
+        <Button
+            android:id="@+id/tablayout_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tab Layout"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
