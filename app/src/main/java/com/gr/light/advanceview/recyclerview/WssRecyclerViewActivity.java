@@ -75,7 +75,7 @@ public class WssRecyclerViewActivity extends BaseActivity {
         });
     }
 
-    // wss 6666
+    // wss 7777
     private void refresh(){
         new Thread(new Runnable() {
             @Override
