@@ -66,7 +66,7 @@ public class WssRecyclerViewActivity extends BaseActivity {
         recyclerView.setAdapter(freshAdapter);
 
         //下拉刷新
-        swipeRefresh.setColorSchemeResources(R.color.colorAccent);
+        swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
