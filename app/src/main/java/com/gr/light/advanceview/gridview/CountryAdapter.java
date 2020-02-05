@@ -25,7 +25,7 @@ public class CountryAdapter extends ArrayAdapter<Country> {
     public CountryAdapter(@NonNull Context context, int resource, @NonNull List<Country> objects) {
         super(context, resource, objects);
         //记录布局资源id
-        resId = resource
+        resId = resource;
     }
 
     @NonNull
