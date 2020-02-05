@@ -75,6 +75,7 @@ public class WssRecyclerViewActivity extends BaseActivity {
         });
     }
 
+    // juuju
     private void refresh(){
         new Thread(new Runnable() {
             @Override
