@@ -21,5 +21,5 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         ButterKnife.bind(this);
     }
     protected abstract int getLayoutId();
-
+    //wocao
 }
