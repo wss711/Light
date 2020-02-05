@@ -75,7 +75,6 @@ public class WssRecyclerViewActivity extends BaseActivity {
         });
     }
 
-    // 什么鬼操作
     private void refresh(){
         new Thread(new Runnable() {
             @Override
