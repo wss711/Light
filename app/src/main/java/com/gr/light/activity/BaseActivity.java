@@ -22,4 +22,6 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     }
     protected abstract int getLayoutId();
     //wocao
+
+    //nimade
 }
