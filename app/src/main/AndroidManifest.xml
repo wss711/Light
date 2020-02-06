@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".notification.WssNotificationActivity"></activity>
-        <activity android:name=".notification.WssNotificationActivity" />
         <activity android:name=".advanceview.cardview.WssCardViewActivity" />
         <activity android:name=".advanceview.recyclerview.WssRecyclerViewActivity" />
         <activity android:name=".advanceview.gridview.WssGridViewActivity" />
@@ -25,4 +24,5 @@
         </activity>
     </application>
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>

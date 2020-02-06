@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 
 import com.gr.light.R;
 import com.gr.light.activity.BaseActivity;
+
+import java.io.File;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -42,7 +45,6 @@ public class WssNotificationActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        initView();
     }
 
     @Override
@@ -65,23 +67,37 @@ public class WssNotificationActivity extends BaseActivity {
         }
     }
 
-    private void initView(){
-        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-    }
+
     private void sendNormalNotification(){
-        Notification.Builder builder = new Notification.Builder(this);
+        // 创建通知管理器
+        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        // 创建通知跳转事件
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.baidu.com/"));
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,0);
-        builder.setContentIntent(pendingIntent);
-        builder.setSmallIcon(R.drawable.lanucher);
-        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.lanucher));
-        builder.setAutoCancel(true);
-        builder.setContentTitle("普通通知");
+        // 设置通知
+        Notification.Builder builder = new Notification.Builder(this)
+                .setContentTitle("通知标题")
+                .setContentText("通知内容。。。。。。。")
+                .setWhen(System.currentTimeMillis())
+                .setSmallIcon(R.drawable.lanucher)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.lanucher))
+                .setContentIntent(pendingIntent)
+                .setSound(Uri.fromFile(new File("/system/media/audio/ringtones/luna.ogg")))
+                .setVibrate(new long[]{0,1000,1000,1000})
+                .setLights(Color.GREEN,1000,1000)
+                .setPriority(Notification.PRIORITY_LOW)
+                .setAutoCancel(true);
+        // 设置通知级别
         selectNotofovatiomLevel(builder);
+        // 显示通知
         notificationManager.notify(0,builder.build());
     }
 
     private void sendFoldNotification(){
+
+        // 创建通知管理器
+        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
         Notification.Builder builder = new Notification.Builder(this);
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.baidu.com/"));
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,0);
@@ -100,6 +116,10 @@ public class WssNotificationActivity extends BaseActivity {
     }
 
     private void sendHangNotification() {
+
+        // 创建通知管理器
+        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
         Notification.Builder builder = new Notification.Builder(this);
         Intent mIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.baidu.com/"));
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, mIntent, 0);
