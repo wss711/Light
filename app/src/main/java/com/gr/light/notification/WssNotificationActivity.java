@@ -1,4 +1,4 @@
-package com.gr.light.advanceview.notification;
+package com.gr.light.notification;
 
 import android.app.Notification;
 import android.app.NotificationManager;
