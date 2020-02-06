@@ -74,4 +74,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.3.1'
     //okhttp日志拦截器
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }

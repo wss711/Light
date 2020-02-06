@@ -1,5 +1,6 @@
 package com.gr.light.advanceview;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,8 +9,10 @@ import android.widget.Button;
 import com.gr.light.MainActivity;
 import com.gr.light.R;
 import com.gr.light.activity.BaseActivity;
+import com.gr.light.advanceview.cardview.WssCardViewActivity;
 import com.gr.light.advanceview.gridview.WssGridViewActivity;
 import com.gr.light.advanceview.listview.WssListViewActivity;
+import com.gr.light.advanceview.notification.WssNotificationActivity;
 import com.gr.light.advanceview.recyclerview.WssRecyclerViewActivity;
 
 import butterknife.BindView;
@@ -25,6 +28,8 @@ public class AdvanceViewActivity extends BaseActivity {
     Button recyclerviewBtn;
     @BindView(R.id.cardview_btn)
     Button cardviewBtn;
+    @BindView(R.id.notification_btn)
+    Button notificationBtn;
     @BindView(R.id.viewpager_btn)
     Button viewpagerBtn;
     @BindView(R.id.bottomNavigation_view_btn)
@@ -42,7 +47,7 @@ public class AdvanceViewActivity extends BaseActivity {
         return R.layout.activity_advance_view;
     }
 
-    @OnClick({R.id.listview_btn, R.id.gridview_btn, R.id.recyclerview_btn, R.id.cardview_btn, R.id.viewpager_btn, R.id.bottomNavigation_view_btn, R.id.tablayout_btn})
+    @OnClick({R.id.listview_btn, R.id.gridview_btn, R.id.recyclerview_btn, R.id.cardview_btn, R.id.viewpager_btn, R.id.bottomNavigation_view_btn, R.id.tablayout_btn,R.id.notification_btn})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.listview_btn:
@@ -55,6 +60,10 @@ public class AdvanceViewActivity extends BaseActivity {
                 startActivity(new Intent(AdvanceViewActivity.this, WssRecyclerViewActivity.class));
                 break;
             case R.id.cardview_btn:
+                startActivity(new Intent(AdvanceViewActivity.this, WssCardViewActivity.class));
+                break;
+            case R.id.notification_btn:
+                startActivity(new Intent(AdvanceViewActivity.this, WssNotificationActivity.class));
                 break;
             case R.id.viewpager_btn:
                 break;
