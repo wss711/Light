@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".advanceview.toolbar.WssToolbarActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/light_toolbar"/>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/toolbar_drawerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--内容界面-->
+        <LinearLayout
+            android:id="@+id/content_interface_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/bitmap">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="内容界面"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+        <!--侧或菜单界面-->
+        <LinearLayout
+            android:id="@+id/side_interface_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"
+            android:orientation="vertical"
+            android:layout_gravity="start">
+
+            <TextView
+                android:id="@+id/close_side_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:clickable="true"
+                android:text="侧滑界面,点击收回侧滑"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+</LinearLayout>
