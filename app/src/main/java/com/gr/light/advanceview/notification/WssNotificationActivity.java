@@ -1,4 +1,4 @@
-package com.gr.light.notification;
+package com.gr.light.advanceview.notification;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -77,7 +77,7 @@ public class WssNotificationActivity extends BaseActivity {
         // 设置通知
         Notification.Builder builder = new Notification.Builder(this)
                 .setContentTitle("通知标题")
-                .setContentText("通知内容。。。。。。。")
+                .setContentText("内容：Today released Android 8.0 version of its name is Oreo")
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.lanucher)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.lanucher))

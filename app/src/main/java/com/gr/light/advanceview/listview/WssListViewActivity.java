@@ -33,7 +33,7 @@ public class WssListViewActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_wss_list_view;
+        return R.layout.activity_wss_listview;
     }
 
     private void initDatas(){

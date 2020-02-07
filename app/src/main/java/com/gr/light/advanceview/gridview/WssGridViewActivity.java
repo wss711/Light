@@ -32,7 +32,7 @@ public class WssGridViewActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_wss_grid_view;
+        return R.layout.activity_wss_gridview;
     }
 
 

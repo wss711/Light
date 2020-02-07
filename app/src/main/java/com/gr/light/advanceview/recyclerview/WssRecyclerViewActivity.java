@@ -35,7 +35,7 @@ public class WssRecyclerViewActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_wss_recycler_view;
+        return R.layout.activity_wss_recyclerview;
     }
 
     private void initDatas() {

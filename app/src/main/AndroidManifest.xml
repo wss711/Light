@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gr.light">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,11 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".notification.WssNotificationActivity"></activity>
+        <activity android:name=".advanceview.WssAdvanceViewActivity" />
+        <activity android:name=".advanceview.toolbar.WssToolbarActivity" />
+        <activity android:name=".advanceview.notification.WssNotificationActivity" />
         <activity android:name=".advanceview.cardview.WssCardViewActivity" />
         <activity android:name=".advanceview.recyclerview.WssRecyclerViewActivity" />
         <activity android:name=".advanceview.gridview.WssGridViewActivity" />
-        <activity android:name=".advanceview.AdvanceViewActivity" />
         <activity android:name=".advanceview.listview.WssListViewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -24,5 +27,4 @@
         </activity>
     </application>
 
-    <uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>

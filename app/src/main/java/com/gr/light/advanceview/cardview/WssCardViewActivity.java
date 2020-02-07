@@ -31,7 +31,7 @@ public class WssCardViewActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_wss_card_view;
+        return R.layout.activity_wss_cardview;
     }
 
     private void initDatas() {

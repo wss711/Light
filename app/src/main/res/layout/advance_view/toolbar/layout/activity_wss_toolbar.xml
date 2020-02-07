@@ -4,12 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".advanceview.gridview.WssGridViewActivity">
-
-    <GridView
-        android:id="@+id/grid_view"
-        android:numColumns="3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    tools:context=".advanceview.toolbar.WssToolbarActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
