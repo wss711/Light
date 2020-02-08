@@ -27,13 +27,13 @@ android {
         main {
             res.srcDirs =
                     [
+                            'src/main/res/layout/permissions',
                             'src/main/res/layout/advance_view/toolbar',
                             'src/main/res/layout/advance_view/notification',
                             'src/main/res/layout/advance_view/cardview',
                             'src/main/res/layout/advance_view/recyclerview',
                             'src/main/res/layout/advance_view/gridview',
                             'src/main/res/layout/advance_view/listview',
-                            'src/main/res/layout/advance_view/palette',
                             'src/main/res/layout/advance_view/',
                             'src/main/res/layout',
                             'src/main/res']
@@ -81,6 +81,12 @@ dependencies {
     implementation 'com.trello.rxlifecycle3:rxlifecycle-android-lifecycle:3.1.0'
     implementation 'com.trello.rxlifecycle3:rxlifecycle-navi:3.1.0'
 
+    // 动态权限(rxpermissions)
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+
+    // 动态权限(permissionsdispatcher)
+    implementation "org.permissionsdispatcher:permissionsdispatcher:4.5.0"
+    annotationProcessor "org.permissionsdispatcher:permissionsdispatcher-processor:4.5.0"
 
     // 引入Retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.7.1'
