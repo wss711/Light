@@ -1,0 +1,338 @@
+@startuml
+
+title __APP's Class Diagram__\n
+
+  namespace com.gr.light {
+    class com.gr.light.BuildConfig {
+    }
+  }
+  
+
+  namespace com.gr.light {
+    class com.gr.light.MainActivity {
+    }
+  }
+  
+
+  namespace com.gr.light {
+    class com.gr.light.MainActivity_ViewBinding {
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace activity {
+      abstract class com.gr.light.activity.BaseActivity {
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      class com.gr.light.advanceview.WssAdvanceViewActivity {
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      class com.gr.light.advanceview.WssAdvanceViewActivity_ViewBinding {
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace cardview {
+        class com.gr.light.advanceview.cardview.WssCardViewActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace cardview {
+        class com.gr.light.advanceview.cardview.WssCardViewActivity_ViewBinding {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace gridview {
+        class com.gr.light.advanceview.gridview.Country {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace gridview {
+        class com.gr.light.advanceview.gridview.CountryAdapter {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace gridview {
+        class com.gr.light.advanceview.gridview.WssGridViewActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace gridview {
+        class com.gr.light.advanceview.gridview.WssGridViewActivity_ViewBinding {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace listview {
+        class com.gr.light.advanceview.listview.Country {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace listview {
+        class com.gr.light.advanceview.listview.CountryAdapter {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace listview {
+        class com.gr.light.advanceview.listview.WssListViewActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace listview {
+        class com.gr.light.advanceview.listview.WssListViewActivity_ViewBinding {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace notification {
+        class com.gr.light.advanceview.notification.WssNotificationActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace notification {
+        class com.gr.light.advanceview.notification.WssNotificationActivity_ViewBinding {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace recyclerview {
+        class com.gr.light.advanceview.recyclerview.Country {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace recyclerview {
+        class com.gr.light.advanceview.recyclerview.FreshAdapter {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace recyclerview {
+        class com.gr.light.advanceview.recyclerview.WssRecyclerViewActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace recyclerview {
+        class com.gr.light.advanceview.recyclerview.WssRecyclerViewActivity_ViewBinding {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace toolbar {
+        class com.gr.light.advanceview.toolbar.WssToolbarActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace advanceview {
+      namespace toolbar {
+        class com.gr.light.advanceview.toolbar.WssToolbarActivity_ViewBinding {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace permissions {
+      class com.gr.light.permissions.CameraPermissionsActivity {
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace permissions {
+      class com.gr.light.permissions.CameraPermissionsActivityPermissionsDispatcher {
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace permissions {
+      class com.gr.light.permissions.CameraPermissionsActivity_ViewBinding {
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace permissions {
+      class com.gr.light.permissions.PermissionsActivity {
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace permissions {
+      class com.gr.light.permissions.PermissionsActivity_ViewBinding {
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace permissions {
+      class com.gr.light.permissions.Permissions_DispatcherActivity {
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace permissions {
+      class com.gr.light.permissions.Permissions_DispatcherActivityPermissionsDispatcher {
+      }
+    }
+  }
+  
+
+  namespace com.gr.light {
+    namespace permissions {
+      class com.gr.light.permissions.Permissions_DispatcherActivity_ViewBinding {
+      }
+    }
+  }
+  
+
+  com.gr.light.MainActivity -up-|> com.gr.light.activity.BaseActivity
+  com.gr.light.MainActivity_ViewBinding .up.|> butterknife.Unbinder
+  com.gr.light.MainActivity_ViewBinding o-- com.gr.light.MainActivity : target
+  com.gr.light.activity.BaseActivity -up-|> com.trello.rxlifecycle3.components.support.RxAppCompatActivity
+  com.gr.light.advanceview.WssAdvanceViewActivity -up-|> com.gr.light.activity.BaseActivity
+  com.gr.light.advanceview.WssAdvanceViewActivity_ViewBinding .up.|> butterknife.Unbinder
+  com.gr.light.advanceview.WssAdvanceViewActivity_ViewBinding o-- com.gr.light.advanceview.WssAdvanceViewActivity : target
+  com.gr.light.advanceview.cardview.WssCardViewActivity -up-|> com.gr.light.activity.BaseActivity
+  com.gr.light.advanceview.cardview.WssCardViewActivity_ViewBinding .up.|> butterknife.Unbinder
+  com.gr.light.advanceview.cardview.WssCardViewActivity_ViewBinding o-- com.gr.light.advanceview.cardview.WssCardViewActivity : target
+  com.gr.light.advanceview.gridview.CountryAdapter -up-|> android.widget.ArrayAdapter
+  com.gr.light.advanceview.gridview.WssGridViewActivity -up-|> com.gr.light.activity.BaseActivity
+  com.gr.light.advanceview.gridview.WssGridViewActivity_ViewBinding .up.|> butterknife.Unbinder
+  com.gr.light.advanceview.gridview.WssGridViewActivity_ViewBinding o-- com.gr.light.advanceview.gridview.WssGridViewActivity : target
+  com.gr.light.advanceview.listview.CountryAdapter -up-|> android.widget.ArrayAdapter
+  com.gr.light.advanceview.listview.WssListViewActivity -up-|> com.gr.light.activity.BaseActivity
+  com.gr.light.advanceview.listview.WssListViewActivity_ViewBinding .up.|> butterknife.Unbinder
+  com.gr.light.advanceview.listview.WssListViewActivity_ViewBinding o-- com.gr.light.advanceview.listview.WssListViewActivity : target
+  com.gr.light.advanceview.notification.WssNotificationActivity -up-|> com.gr.light.activity.BaseActivity
+  com.gr.light.advanceview.notification.WssNotificationActivity_ViewBinding .up.|> butterknife.Unbinder
+  com.gr.light.advanceview.notification.WssNotificationActivity_ViewBinding o-- com.gr.light.advanceview.notification.WssNotificationActivity : target
+  com.gr.light.advanceview.recyclerview.FreshAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.gr.light.advanceview.recyclerview.WssRecyclerViewActivity -up-|> com.gr.light.activity.BaseActivity
+  com.gr.light.advanceview.recyclerview.WssRecyclerViewActivity o-- com.gr.light.advanceview.recyclerview.FreshAdapter : freshAdapter
+  com.gr.light.advanceview.recyclerview.WssRecyclerViewActivity_ViewBinding .up.|> butterknife.Unbinder
+  com.gr.light.advanceview.recyclerview.WssRecyclerViewActivity_ViewBinding o-- com.gr.light.advanceview.recyclerview.WssRecyclerViewActivity : target
+  com.gr.light.advanceview.toolbar.WssToolbarActivity -up-|> com.gr.light.activity.BaseActivity
+  com.gr.light.advanceview.toolbar.WssToolbarActivity_ViewBinding .up.|> butterknife.Unbinder
+  com.gr.light.advanceview.toolbar.WssToolbarActivity_ViewBinding o-- com.gr.light.advanceview.toolbar.WssToolbarActivity : target
+  com.gr.light.permissions.CameraPermissionsActivity -up-|> com.gr.light.activity.BaseActivity
+  com.gr.light.permissions.CameraPermissionsActivity_ViewBinding .up.|> butterknife.Unbinder
+  com.gr.light.permissions.CameraPermissionsActivity_ViewBinding o-- com.gr.light.permissions.CameraPermissionsActivity : target
+  com.gr.light.permissions.PermissionsActivity -up-|> com.gr.light.activity.BaseActivity
+  com.gr.light.permissions.PermissionsActivity_ViewBinding .up.|> butterknife.Unbinder
+  com.gr.light.permissions.PermissionsActivity_ViewBinding o-- com.gr.light.permissions.PermissionsActivity : target
+  com.gr.light.permissions.Permissions_DispatcherActivity -up-|> com.gr.light.activity.BaseActivity
+  com.gr.light.permissions.Permissions_DispatcherActivity_ViewBinding .up.|> butterknife.Unbinder
+  com.gr.light.permissions.Permissions_DispatcherActivity_ViewBinding o-- com.gr.light.permissions.Permissions_DispatcherActivity : target
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

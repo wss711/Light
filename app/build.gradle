@@ -27,6 +27,8 @@ android {
         main {
             res.srcDirs =
                     [
+                            'src/main/res/layout/network',
+                            'src/main/res/layout/material_design',
                             'src/main/res/layout/permissions',
                             'src/main/res/layout/advance_view/toolbar',
                             'src/main/res/layout/advance_view/notification',
