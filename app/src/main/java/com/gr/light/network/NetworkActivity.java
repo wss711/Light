@@ -49,7 +49,7 @@ public class NetworkActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        initOkHttpClient();
+//        initOkHttpClient();
     }
 
     @Override
@@ -61,7 +61,31 @@ public class NetworkActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.get_btn:
-                getAsyncHttp();
+//                getAsyncHttp();
+
+                File sdcache = getExternalCacheDir();
+                int cacheSize = 10 * 1024 * 1024;
+                OkHttpClient.Builder builder = new OkHttpClient.Builder()
+                        .connectTimeout(15, TimeUnit.SECONDS)
+                        .writeTimeout(20, TimeUnit.SECONDS)
+                        .readTimeout(20, TimeUnit.SECONDS)
+                        .cache(new Cache(sdcache.getAbsoluteFile(),cacheSize));
+
+                mOkHttpClient = builder.build();
+
+                Request.Builder requestBuilder = new Request.Builder().url("http://www.baidu.com");
+                requestBuilder.method("GET", null);
+                Request request = requestBuilder.build();
+
+                try {
+                    Response response = OkHttpUtils.asyncGet(mOkHttpClient,request);
+                    if(response.isSuccessful()){
+                        Toast.makeText(getApplicationContext(),"OkHttpUtils.asyncGet 请求成功",Toast.LENGTH_SHORT).show();
+                    }
+                    Log.i("WSS",response.body().string());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
             case R.id.post_btn:
                 break;
@@ -126,6 +150,16 @@ public class NetworkActivity extends BaseActivity {
             }
         });
     }
+
+    /**
+     * TODO
+     *
+     * @param
+     * @return
+     * @author WSS
+     * @time 2020-02-12 15:13
+     **/
+
 
 
 }
