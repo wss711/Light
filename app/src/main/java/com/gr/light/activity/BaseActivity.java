@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
  **/
 public abstract class BaseActivity extends RxAppCompatActivity {
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         ButterKnife.bind(this);

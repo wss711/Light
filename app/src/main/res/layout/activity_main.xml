@@ -26,6 +26,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Network"/>
+        <Button
+            android:id="@+id/patterns_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Design Patterns"/>
 
     </LinearLayout>
 

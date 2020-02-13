@@ -27,6 +27,8 @@ android {
         main {
             res.srcDirs =
                     [
+
+                            'src/main/res/layout/design_patterns',
                             'src/main/res/layout/network',
                             'src/main/res/layout/material_design',
                             'src/main/res/layout/permissions',
