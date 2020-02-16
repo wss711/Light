@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".patterns.BuilderPatternsActivity">
+
     <Button
         android:id="@+id/singleton_patterns_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="单例模式"/>
+
     <Button
         android:id="@+id/simple_factory_patterns_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="简单工厂模式"/>
+
     <Button
         android:id="@+id/static_factory_patterns_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="静态工厂模式"/>
+
     <Button
         android:id="@+id/factory_patterns_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="工厂方法模式"/>
+
     <Button
         android:id="@+id/builder_patterns_btn"
         android:layout_width="match_parent"

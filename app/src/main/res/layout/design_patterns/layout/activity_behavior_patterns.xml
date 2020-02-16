@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".patterns.BehaviorPatternsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/template_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="模板模式"/>
+
+    <Button
+        android:id="@+id/Strategy_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="策略模式"/>
+
+    <Button
+        android:id="@+id/observer_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="观察者模式"/>
+
+    <Button
+        android:id="@+id/iterator_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="迭代器模式"/>
+
+    <Button
+        android:id="@+id/chain_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="责任链模式"/>
+    <Button
+        android:id="@+id/command_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="命令模式"/>
+    <Button
+        android:id="@+id/memento_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="备忘录模式"/>
+    <Button
+        android:id="@+id/state_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="状态模式"/>
+    <Button
+        android:id="@+id/visitor_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="访问者模式"/>
+    <Button
+        android:id="@+id/mediator_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="中介者模式"/>
+    <Button
+        android:id="@+id/interpreter_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="解释器模式"/>
+
+</LinearLayout>
