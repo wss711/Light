@@ -1,15 +1,22 @@
 package com.gr.light.patterns;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.gr.light.R;
 import com.gr.light.activity.BaseActivity;
 import com.gr.light.patterns.proxy.ProxyClient;
+import com.gr.light.patterns.proxy.compulsiveproxy.ComplusiveProxyPatternsClient;
+import com.gr.light.patterns.proxy.normalproxy.GamePlayerProxy;
+import com.gr.light.patterns.proxy.normalproxy.IGamePlayer;
+import com.gr.light.patterns.proxy.normalproxy.ProxyNormalPatternsClient;
 
 import butterknife.OnClick;
 
 public class StructPatternsActivity extends BaseActivity {
+
+    private final static String TAG = "DP";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +34,12 @@ public class StructPatternsActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.proxy_patterns_btn:
+                Log.i(TAG,"======== Initial Proxy Patterns ==========");
                 ProxyClient.execute();
+                Log.i(TAG,"======== Normal Proxy Patterns ==========");
+                ProxyNormalPatternsClient.execute();
+                Log.i(TAG,"======== Complusive Proxy Patterns ==========");
+                ComplusiveProxyPatternsClient.execute();
                 break;
             case R.id.adapter_patterns_btn:
                 break;

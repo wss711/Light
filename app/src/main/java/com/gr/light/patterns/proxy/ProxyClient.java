@@ -12,6 +12,5 @@ public class ProxyClient {
         proxyPlayer.login("wss","123654");
         proxyPlayer.killBoss();
         proxyPlayer.upgrade();
-        //
     }
 }
