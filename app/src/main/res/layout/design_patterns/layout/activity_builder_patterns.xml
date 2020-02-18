@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".patterns.BuilderPatternsActivity">
+    tools:context=".patterns.CreatePatternsActivity">
 
     <Button
         android:id="@+id/singleton_patterns_btn"
@@ -35,5 +35,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="建造者模式"/>
+
+    <Button
+        android:id="@+id/prototype_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="原型模式"/>
 
 </LinearLayout>

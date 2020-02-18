@@ -12,12 +12,13 @@ import com.gr.light.patterns.factory.Human;
 import com.gr.light.patterns.factory.HumanFactory;
 import com.gr.light.patterns.factory.WhiteHuman;
 import com.gr.light.patterns.factory.YellowHuman;
+import com.gr.light.patterns.prototype.PrototypePatternsClient;
 import com.gr.light.patterns.simplefactory.ComputerFactory;
 import com.gr.light.patterns.singleton.HungrySingleton;
 
 import butterknife.OnClick;
 
-public class BuilderPatternsActivity extends BaseActivity {
+public class CreatePatternsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,8 @@ public class BuilderPatternsActivity extends BaseActivity {
         return R.layout.activity_builder_patterns;
     }
 
-    @OnClick({R.id.singleton_patterns_btn, R.id.simple_factory_patterns_btn, R.id.static_factory_patterns_btn, R.id.factory_patterns_btn, R.id.builder_patterns_btn})
+    @OnClick({R.id.singleton_patterns_btn, R.id.simple_factory_patterns_btn, R.id.static_factory_patterns_btn,
+            R.id.factory_patterns_btn, R.id.builder_patterns_btn,R.id.prototype_patterns_btn})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.singleton_patterns_btn:
@@ -46,6 +48,10 @@ public class BuilderPatternsActivity extends BaseActivity {
             case R.id.builder_patterns_btn:
                 builderPatternsClient();
                 break;
+            case R.id.prototype_patterns_btn:
+                PrototypePatternsClient.execute();
+                break;
+
         }
     }
 

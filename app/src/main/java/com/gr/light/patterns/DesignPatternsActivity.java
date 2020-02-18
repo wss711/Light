@@ -25,7 +25,7 @@ public class DesignPatternsActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.create_patterns_btn:
-                startActivity(new Intent(DesignPatternsActivity.this,BuilderPatternsActivity.class));
+                startActivity(new Intent(DesignPatternsActivity.this, CreatePatternsActivity.class));
                 break;
             case R.id.struct_patterns_btn:
                 startActivity(new Intent(DesignPatternsActivity.this,StructPatternsActivity.class));
