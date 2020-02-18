@@ -35,9 +35,11 @@ public class BehaviorPatternsActivity extends BaseActivity {
             case R.id.template_patterns_btn:
                 System.out.println("---------- BMW ----------");
                 BmwCarModel bmwCarModel = new BmwCarModel();
+
                 // 不要喇叭
                 bmwCarModel.setAlarm(false);
                 bmwCarModel.run();
+
                 // 要喇叭
                 bmwCarModel.setAlarm(true);
                 bmwCarModel.run();
