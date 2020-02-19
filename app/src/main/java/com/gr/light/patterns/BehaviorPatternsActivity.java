@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.gr.light.R;
 import com.gr.light.activity.BaseActivity;
+import com.gr.light.patterns.mediator.Client;
 import com.gr.light.patterns.template.BenzCarModel;
 import com.gr.light.patterns.template.BmwCarModel;
 
@@ -49,14 +50,17 @@ public class BehaviorPatternsActivity extends BaseActivity {
 
                 break;
             case R.id.Strategy_patterns_btn:
+                com.gr.light.patterns.strategy.Client.execute();
                 break;
             case R.id.observer_patterns_btn:
                 break;
             case R.id.iterator_patterns_btn:
                 break;
             case R.id.chain_patterns_btn:
+                com.gr.light.patterns.chain.Client.execute();
                 break;
             case R.id.command_patterns_btn:
+                com.gr.light.patterns.command.Client.execute();
                 break;
             case R.id.memento_patterns_btn:
                 break;
@@ -65,6 +69,7 @@ public class BehaviorPatternsActivity extends BaseActivity {
             case R.id.visitor_patterns_btn:
                 break;
             case R.id.mediator_patterns_btn:
+                Client.execute();
                 break;
             case R.id.interpreter_patterns_btn:
                 break;

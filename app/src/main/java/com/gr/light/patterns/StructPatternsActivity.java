@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.gr.light.R;
 import com.gr.light.activity.BaseActivity;
+import com.gr.light.patterns.decorator.Client;
 import com.gr.light.patterns.proxy.ProxyClient;
 import com.gr.light.patterns.proxy.compulsiveproxy.ComplusiveProxyPatternsClient;
 import com.gr.light.patterns.proxy.normalproxy.GamePlayerProxy;
@@ -42,8 +43,10 @@ public class StructPatternsActivity extends BaseActivity {
                 ComplusiveProxyPatternsClient.execute();
                 break;
             case R.id.adapter_patterns_btn:
+                com.gr.light.patterns.adapter.Client.execute();
                 break;
             case R.id.decorator_patterns_btn:
+                Client.execute();
                 break;
             case R.id.facade_patterns_btn:
                 break;
