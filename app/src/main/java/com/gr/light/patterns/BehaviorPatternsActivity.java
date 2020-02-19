@@ -55,6 +55,7 @@ public class BehaviorPatternsActivity extends BaseActivity {
             case R.id.observer_patterns_btn:
                 break;
             case R.id.iterator_patterns_btn:
+                com.gr.light.patterns.iterator.Client.execute();
                 break;
             case R.id.chain_patterns_btn:
                 com.gr.light.patterns.chain.Client.execute();
