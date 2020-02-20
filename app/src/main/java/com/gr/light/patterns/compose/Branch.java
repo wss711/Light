@@ -6,11 +6,11 @@ public class Branch implements IBranch {
 
     private String name;
     private String position;
-    private String salary;
+    private int salary;
 
     private ArrayList<ICorp> subordinateList = new ArrayList<>();
 
-    public Branch(String name, String position, String salary) {
+    public Branch(String name, String position, int salary) {
         this.name = name;
         this.position = position;
         this.salary = salary;

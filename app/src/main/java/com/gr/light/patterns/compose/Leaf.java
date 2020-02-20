@@ -4,10 +4,16 @@ public class Leaf implements ILeaf {
 
     private final static String TAG = "Compose";
 
-    private String name;
-    private String position;
-    private String salary;
+    private String name = "";
+    private String position = "";
+    private int salary = 0;
 
+
+    public Leaf(String name, String position, int salary) {
+        this.name = name;
+        this.position = position;
+        this.salary = salary;
+    }
 
     @Override
     public String getInfo() {

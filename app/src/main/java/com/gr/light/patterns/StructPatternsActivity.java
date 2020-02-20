@@ -53,6 +53,7 @@ public class StructPatternsActivity extends BaseActivity {
             case R.id.bridge_patterns_btn:
                 break;
             case R.id.compose_patterns_btn:
+                com.gr.light.patterns.compose.Client.execute();
                 break;
             case R.id.flyweight_patterns_btn:
                 break;
