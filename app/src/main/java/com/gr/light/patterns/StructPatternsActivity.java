@@ -49,6 +49,7 @@ public class StructPatternsActivity extends BaseActivity {
                 Client.execute();
                 break;
             case R.id.facade_patterns_btn:
+                com.gr.light.patterns.facade.Client.execute();
                 break;
             case R.id.bridge_patterns_btn:
                 break;
