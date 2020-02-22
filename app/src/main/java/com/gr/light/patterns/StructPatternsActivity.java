@@ -52,11 +52,13 @@ public class StructPatternsActivity extends BaseActivity {
                 com.gr.light.patterns.facade.Client.execute();
                 break;
             case R.id.bridge_patterns_btn:
+                com.gr.light.patterns.bridge.Client.execute();
                 break;
             case R.id.compose_patterns_btn:
                 com.gr.light.patterns.compose.Client.execute();
                 break;
             case R.id.flyweight_patterns_btn:
+                com.gr.light.patterns.flyweight.Client.execute();
                 break;
         }
     }

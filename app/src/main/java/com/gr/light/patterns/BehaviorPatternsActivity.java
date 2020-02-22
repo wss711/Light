@@ -68,13 +68,16 @@ public class BehaviorPatternsActivity extends BaseActivity {
                 com.gr.light.patterns.memento.Client.execute();
                 break;
             case R.id.state_patterns_btn:
+                com.gr.light.patterns.state.Client.execute();
                 break;
             case R.id.visitor_patterns_btn:
+                com.gr.light.patterns.visitor.Client.execute();
                 break;
             case R.id.mediator_patterns_btn:
                 Client.execute();
                 break;
             case R.id.interpreter_patterns_btn:
+                com.gr.light.patterns.interpreter.Client.execute();
                 break;
         }
     }
