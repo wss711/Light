@@ -1,4 +1,4 @@
-package com.cap.mvcnote;
+package com.gr.mvcnote;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.cap.mvcnote", appContext.getPackageName());
+        assertEquals("com.gr.mvcnote", appContext.getPackageName());
     }
 }
