@@ -1,4 +1,4 @@
-package com.gr.mvcnote;
+package com.cap.mvcnote;
 
 import org.junit.Test;
 

@@ -6,8 +6,8 @@ android {
 
 
     defaultConfig {
-        applicationId "com.gr.mvcnote"
-        minSdkVersion 25
+        applicationId "com.cap.mvcnote"
+        minSdkVersion 20
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"

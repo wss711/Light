@@ -1,4 +1,4 @@
-package com.gr.mvcnote;
+package com.cap.mvcnote;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,5 +10,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //我去你大爷的
     }
 }
