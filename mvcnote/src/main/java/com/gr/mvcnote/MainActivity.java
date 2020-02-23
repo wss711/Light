@@ -11,6 +11,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 我去你妈的，浪费我的时间
+        // 我去你妈的，浪费我的时间，日你个仙人板板
     }
 }
