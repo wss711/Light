@@ -1,10 +1,5 @@
 package com.gr.light.patterns.interpreter;
 
-import android.util.Log;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.HashMap;
 
 /**
@@ -24,7 +19,6 @@ public class Client {
 
         System.out.println("运算结果为："+ expStr + "=" + cal.run(var));
     }
-
 
     public static HashMap<String,Integer> getValue(String expStr) {
         HashMap<String,Integer> map = new HashMap<>();
