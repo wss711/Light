@@ -3,6 +3,7 @@ package com.gr.mvcnote;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +12,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 我去你妈的，浪费我的时间，日你个仙人板板
+        initToolBar();
     }
+
+    private void initToolBar(){
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+
+
 }
