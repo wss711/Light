@@ -26,7 +26,8 @@ public class DiaryLocalDataSource implements DataSource<Diary> {
 
     @Override
     public void getAll(@NonNull DataCallback<List<Diary>> callback) {
-
+        //
+        // 我去你的
     }
 
     @Override
