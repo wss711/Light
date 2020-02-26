@@ -2,6 +2,8 @@ package com.gr.mvcnote.model;
 
 import androidx.annotation.NonNull;
 
+import java.util.UUID;
+
 /**
  * TODO
  * <p>
@@ -13,6 +15,15 @@ public class Diary {
     private String title;
     private String description;
 
+    public Diary(@NonNull String title, @NonNull String description) {
+        this(title,description, UUID.randomUUID().toString());
+    }
+
+    public Diary(@NonNull String id, @NonNull String title, @NonNull String description) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+    }
 
     public String getId() {
         return id;
@@ -38,14 +49,5 @@ public class Diary {
         this.description = description;
     }
 
-    public Diary(@NonNull String title, @NonNull String description) {
-        this.title = title;
-        this.description = description;
-    }
 
-    public Diary(@NonNull String id, @NonNull String title, @NonNull String description) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-    }
 }

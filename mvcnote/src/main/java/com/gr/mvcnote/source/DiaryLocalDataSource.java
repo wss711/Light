@@ -1,4 +1,4 @@
-package com.gr.mvcnote.data;
+package com.gr.mvcnote.source;
 
 import androidx.annotation.NonNull;
 
@@ -17,12 +17,24 @@ import java.util.Map;
  **/
 public class DiaryLocalDataSource implements DataSource<Diary> {
 
-    private static final String DIARY_DATA = "diary_data"; // 存储日记数据的SharedPreferences名称
-    private static final String ALL_DIARY = "all_diary"; // 存储日记数据的SharedPreferences键名
+    // 存储日记数据的SharedPreferences名称
+    private static final String DIARY_DATA = "diary_data";
+    // 存储日记数据的SharedPreferences键名
+    private static final String ALL_DIARY = "all_diary";
 
-    private static SharedPreferencesUtils mSpUtils; // SharedPreferences工具类
-    private static Map<String, Diary> LOCAL_DATA = new LinkedHashMap<>(); // 本地数据内存缓存
-    private static volatile DiariesLocalDataSource mInstance; // 本地数据源
+    // SharedPreferences工具类
+    private static SharedPreferencesUtils mSpUtils;
+    // 本地数据的内存缓存
+    private static Map<String,Diary> LOCAL_DATA= new LinkedHashMap<>();
+    // 本地数据源,单例处理
+    private static volatile DiaryLocalDataSource mInstance;
+
+    // 单例化处理本地数据源
+    private DiaryLocalDataSource(){
+        mSpUtils =
+    }
+
+
 
     @Override
     public void getAll(@NonNull DataCallback<List<Diary>> callback) {

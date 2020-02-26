@@ -10,7 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
  * <p>
  * Created by WSS on  2020-02-24
  **/
-public class ActivityUtils {
+public final class ActivityUtils {
     public static void addFragment2Activity(@NonNull FragmentManager fragmentManager,
                                             @NonNull Fragment fragment, int frameId){
         // Fragment事务开始
