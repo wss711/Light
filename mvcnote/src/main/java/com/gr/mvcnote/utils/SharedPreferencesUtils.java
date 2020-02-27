@@ -3,6 +3,7 @@ package com.gr.mvcnote.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import androidx.annotation.NonNull;
 import androidx.collection.SimpleArrayMap;
 
 import com.gr.mvcnote.other.EnApplication;
@@ -24,6 +25,7 @@ public final class SharedPreferencesUtils {
     }
 
    public static SharedPreferencesUtils getInstance(String spName){
+       // 从内存缓存中获得SharedPreferences工具类
         SharedPreferencesUtils spUtils = mCaches.get(spName);
         if(spUtils == null){
             // 创建SharedPreferences工具类
@@ -33,4 +35,19 @@ public final class SharedPreferencesUtils {
         }
         return spUtils;
    }
+
+   // 将数据存入SharedPreferences
+   public void put(@NonNull final String key,final String value){
+        mSharedPreferences.edit().putString(key,value).apply();
+   }
+
+   // 从SharedPreferences中获取数据
+   public String get(@NonNull final String key){
+        return mSharedPreferences.getString(key,"");
+   }
+   // 从SharedPreferences中删除数据
+   public void remove(@NonNull final String key){
+        mSharedPreferences.edit().remove(key).apply();
+   }
+
 }

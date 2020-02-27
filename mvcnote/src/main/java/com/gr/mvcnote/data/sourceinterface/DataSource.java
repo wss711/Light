@@ -1,4 +1,4 @@
-package com.gr.mvcnote.source;
+package com.gr.mvcnote.data.sourceinterface;
 
 import androidx.annotation.NonNull;
 
