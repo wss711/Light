@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.gr.mvcnote.R;
 import com.gr.mvcnote.controller.DiaryController;
@@ -37,8 +38,7 @@ public class DiaryFragment extends Fragment {
         // 加载日记页面布局
         View view = inflater.inflate(R.layout.fragment_diaries,container,false);
         // 将日记列表控件传入控制器
-        mController.setDiaryList();
-
+        mController.setDiaryList((RecyclerView)view.findViewById(R.id.diaries_list));
         return view;
     }
 
@@ -46,7 +46,8 @@ public class DiaryFragment extends Fragment {
     public void onResume() {
         super.onResume();
         // 加载日记列表
-        mController.loadDiaryList();
+        mController.loadDiary();
+
     }
 
     @Override
@@ -62,7 +63,6 @@ public class DiaryFragment extends Fragment {
                 // 通知控制器添加新的日记
                 mController.gotoWriteDiary();
                 return true;
-                break;
         }
         // 返回false代表菜单点击选择事件没有被处理
         return false;

@@ -21,24 +21,26 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryHolder> {
     private List<Diary> mDiaryList;
     private OnLongClickListener<Diary> mOnLongClickListener;
 
+    // 传入日记数据
     public DiaryAdapter(List<Diary> mDiaryList) {
         this.mDiaryList = mDiaryList;
     }
 
+    // 更新数据
     public void update(List<Diary> diaryList){
         mDiaryList = diaryList;
-        notifyDataSetChanged();
+        notifyDataSetChanged(); //通知Adapter更新
     }
 
+    // 设置长按监听
     public void setOnLongClickListener(OnLongClickListener<Diary> onLongClickListener){
         this.mOnLongClickListener = onLongClickListener;
-
     }
-
 
     @NonNull
     @Override
     public DiaryHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // 创建日记Holder
         return new DiaryHolder(parent);
     }
 
@@ -59,9 +61,8 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryHolder> {
         return mDiaryList.size();
     }
 
-    public interface OnLongClickListener<T> { // 长按监听事件
-
-        boolean onLongClick(View v, T data);
-
+    public interface OnLongClickListener<T>{
+        boolean onLongClick(View v,T data);
     }
+
 }

@@ -59,7 +59,6 @@ public class DiaryLocalDataSource implements DataSource<Diary> {
                 }
             }
         }
-
         return mInstance;
     }
 

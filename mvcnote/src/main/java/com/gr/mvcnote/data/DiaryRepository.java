@@ -1,5 +1,7 @@
 package com.gr.mvcnote.data;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.gr.mvcnote.data.local.DiaryLocalDataSource;
@@ -34,7 +36,9 @@ public class DiaryRepository implements DataSource<Diary> {
         if(mInstance == null){
             synchronized (DiaryRepository.class){
                 if(mInstance == null){
+                    Log.i("wss",mInstance + " 15151561515151");
                     mInstance = new DiaryRepository();
+                    Log.i("wss",mInstance + " 15151561515151");
                 }
             }
         }

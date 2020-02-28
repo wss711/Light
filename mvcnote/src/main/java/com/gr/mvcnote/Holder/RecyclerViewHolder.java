@@ -10,25 +10,27 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * TODO
+ * TODO 处理ViewHolder的一些基础方法，继承自RecyclerView组件ViewHolder。
  * <p>
  * Created by WSS on  2020-02-24
  **/
 public class RecyclerViewHolder<T> extends RecyclerView.ViewHolder {
 
-    // ViewHolder需要的数据
+    // ViewHolder需要持有的数据
     private T mData;
 
-    public RecyclerViewHolder(ViewGroup parent, @LayoutRes int resource) {
-        // 构造方法，加载界面布局
+    // 在构造方法中加载布局
+    public RecyclerViewHolder(ViewGroup parent,@LayoutRes int resource) {
         super(LayoutInflater.from(parent.getContext()).inflate(resource,parent,false));
     }
+
+    // 提示调用父类方法
     @CallSuper
     public void onBindView(T data){
         mData = data;
     }
-
-    public T getmData() {
+    // 获取数据
+    public T getData(){
         return mData;
     }
 }

@@ -1,4 +1,4 @@
-package com.gr.mvcnote;
+package com.gr.mvcnote.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.gr.mvcnote.R;
 import com.gr.mvcnote.fragment.DiaryFragment;
 import com.gr.mvcnote.utils.ActivityUtils;
 

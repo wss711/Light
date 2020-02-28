@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import androidx.annotation.NonNull;
 import androidx.collection.SimpleArrayMap;
 
-import com.gr.mvcnote.other.EnApplication;
+import com.gr.mvcnote.EnApplication;
 
 /**
  * TODO
@@ -21,7 +21,7 @@ public final class SharedPreferencesUtils {
 
     private SharedPreferencesUtils(final String spName,final int mode){
         // 获得SharedPreferences对象
-        mSharedPreferences = EnApplication.getInstance().getSharedPreferences(spName,mode);
+        mSharedPreferences = EnApplication.get().getSharedPreferences(spName,mode);
     }
 
    public static SharedPreferencesUtils getInstance(String spName){
