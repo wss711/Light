@@ -8,6 +8,7 @@ import android.app.Application;
  * Created by WSS on  2020-02-28
  **/
 public class EnApplication extends Application {
+
     private static EnApplication INSTANCE;
 
     @Override
