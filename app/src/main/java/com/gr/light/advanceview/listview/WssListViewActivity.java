@@ -51,6 +51,7 @@ public class WssListViewActivity extends BaseActivity {
         countryList.add(new Country("塞尔维亚",R.drawable.serbia));
         countryList.add(new Country("西班牙",R.drawable.spain));
         countryList.add(new Country("英国",R.drawable.united_kingdom));
+
     }
 
     private void initView(){

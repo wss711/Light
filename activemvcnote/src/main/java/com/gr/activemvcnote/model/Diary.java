@@ -2,6 +2,10 @@ package com.gr.activemvcnote.model;
 
 import androidx.annotation.NonNull;
 
+import com.gr.activemvcnote.observer.Observer;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -15,6 +19,8 @@ public class Diary {
     private String title;
     private String description;
 
+    private List<Observer<Diary>> mObserverList;
+
     public String getId() {
         return id;
     }
@@ -25,6 +31,7 @@ public class Diary {
 
     public void setTitle(String title) {
         this.title = title;
+
     }
 
     public String getDescription() {
@@ -43,5 +50,22 @@ public class Diary {
         this.id = id;
         this.title = title;
         this.description = description;
+    }
+
+    public void registerObserver(Observer<Diary> observer){
+        getObservers().add(observer);
+    }
+
+    public void notifyObservers(){
+        for(Observer<Diary> observer : getObservers()){
+            observer.update(this);
+        }
+    }
+
+    private List<Observer<Diary>> getObservers(){
+        if(mObserverList == null){
+            mObserverList = new ArrayList<>();
+        }
+        return mObserverList;
     }
 }
