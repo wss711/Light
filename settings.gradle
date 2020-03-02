@@ -1,3 +1,4 @@
 include ':app', ':mvcnote'
 rootProject.name='Light'
 include ':activemvcnote'
+include ':mvp'
