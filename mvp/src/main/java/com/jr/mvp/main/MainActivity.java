@@ -1,8 +1,10 @@
-package com.jr.mvp;
+package com.jr.mvp.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.jr.mvp.R;
 
 public class MainActivity extends AppCompatActivity {
 
