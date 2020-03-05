@@ -18,7 +18,7 @@ public interface DiaryContract {
 
         void gotoWriteDiary();
 
-        void gotoUpdateDiary();
+        void gotoUpdateDiary(String diaryId);
 
         void showSuccess();
 

@@ -1,13 +1,17 @@
 package com.jr.mvp.main;
 
+import android.app.Activity;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jr.mvp.data.DiaryRepository;
+import com.jr.mvp.data.source.DataCallback;
 import com.jr.mvp.main.list.DiaryAdapter;
 import com.jr.mvp.model.Diary;
+
+import java.util.List;
 
 /**
  * TODO
@@ -27,7 +31,8 @@ public class DiaryPresenter implements DiaryContract.Presenter{
 
     @Override
     public void start() {
-
+        initAdapter();
+        loadDiary();
     }
 
     @Override
@@ -37,12 +42,28 @@ public class DiaryPresenter implements DiaryContract.Presenter{
 
     @Override
     public void loadDiary() {
+        mDiaryRepository.getAll(new DataCallback<List<Diary>>() {
+            @Override
+            public void onSuccess(List<Diary> diaryList) {
+                if(!mView.isActive()){
+                    return;
+                }
+                updateDiaryList(diaryList);
+            }
 
+            @Override
+            public void onError() {
+                if(!mView.isActive()){
+                    return;
+                }
+                mView.showError();
+            }
+        });
     }
 
     @Override
     public void addDiary() {
-
+        mView.gotoWriteDiary();
     }
 
     @Override
@@ -52,21 +73,25 @@ public class DiaryPresenter implements DiaryContract.Presenter{
 
     @Override
     public void onResult(int requestCode, int resultCode) {
-
+        if(Activity.RESULT_OK != resultCode){
+            return;
+        }
+        mView.showSuccess();
     }
-
 
     private void initAdapter(){
         mDiaryAdapter = new DiaryAdapter();
         mDiaryAdapter.setOnLongClickListener(new DiaryAdapter.OnLongClickListener<Diary>() {
             @Override
-            public boolean onLongClick(View v, Diary data) {
-                updateDiary();
+            public boolean onLongClick(View v, Diary diary) {
+                updateDiary(diary);
                 return false;
             }
         });
         mView.setListAdapter(mDiaryAdapter);
     }
 
-
+    private void updateDiaryList(List<Diary> diaryList){
+        mDiaryAdapter.update(diaryList);
+    }
 }
