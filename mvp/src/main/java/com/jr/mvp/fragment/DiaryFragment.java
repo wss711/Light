@@ -81,12 +81,15 @@ public class DiaryFragment extends Fragment implements DiaryContract.View {
         startActivity(intent);
     }
 
+    /** 跳转更新日记 */
     @Override
     public void gotoUpdateDiary(String diaryId) {
         Intent intent = new Intent(getContext(),DiaryEditActivity.class);
         intent.putExtra(DiaryEditFragment.DIARY_ID,diaryId);
+        getContext().startActivity(intent);
     }
 
+    /** 弹出成功提示信息 */
     @Override
     public void showSuccess() {
         showMessage(getString(R.string.success));
