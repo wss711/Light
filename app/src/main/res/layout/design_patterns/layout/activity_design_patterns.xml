@@ -22,5 +22,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Behavior Patterns"/>
+    <Button
+        android:id="@+id/callback_patterns_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CallBack Test"/>
+
+
 
 </LinearLayout>

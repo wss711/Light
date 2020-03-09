@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.jr.mvp.data.DiaryRepository;
 import com.jr.mvp.data.source.DataCallback;

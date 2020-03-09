@@ -24,7 +24,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".patterns.CreatePatternsActivity"></activity>
+        <activity android:name=".patterns.CallbackActivity"></activity>
+        <activity android:name=".patterns.CreatePatternsActivity" />
         <activity android:name=".patterns.BehaviorPatternsActivity" />
         <activity android:name=".patterns.StructPatternsActivity" />
         <activity android:name=".patterns.DesignPatternsActivity" />

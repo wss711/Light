@@ -18,9 +18,14 @@ public class DiaryEditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diary_edit);
+
+        // 获取上一级页面管理的DiaryFragment跳转过来时携带的参数----日记id
         String diaryId = getIntent().getStringExtra(DiaryEditFragment.DIARY_ID);
 
+        // 初始化顶栏，通过日记Id，对顶部导航栏Toolbar进行设置。
         initToolbar(diaryId);
+
+        // 初始化Fragment
         initFragment(diaryId);
 
     }
