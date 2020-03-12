@@ -9,7 +9,6 @@ import android.text.TextUtils;
 
 
 import com.jr.mvp.R;
-import com.jr.mvp.model.Diary;
 import com.jr.mvp.utils.ActivityUtils;
 
 public class DiaryEditActivity extends AppCompatActivity {

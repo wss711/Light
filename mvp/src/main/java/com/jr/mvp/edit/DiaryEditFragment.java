@@ -96,4 +96,5 @@ public class DiaryEditFragment extends Fragment implements DiaryEditContract.Vie
     public void setPresenter(DiaryEditContract.Presenter presenter) {
         mPresenter = presenter;
     }
+
 }

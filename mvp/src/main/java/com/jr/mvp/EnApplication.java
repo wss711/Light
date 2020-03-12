@@ -20,4 +20,5 @@ public class EnApplication extends Application {
     public static EnApplication getInstance(){
         return INSTANCE;
     }
+
 }
