@@ -18,6 +18,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.reactivex.Flowable;
+
 /**
  * TODO
  * <p>
@@ -56,24 +58,41 @@ public class DiaryLocalDataSource implements DataSource<Diary> {
         return mInstance;
     }
 
-    /** 获取所有的日记数据 */
+//    /** 获取所有的日记数据 */
+//    @Override
+//    public void getAll(@NonNull DataCallback<List<Diary>> callback) {
+//        if(LOCAL_DATA.isEmpty()){
+//            callback.onError();
+//        }else {
+//            callback.onSuccess(new ArrayList<>(LOCAL_DATA.values()));
+//        }
+//    }
+//
+//    /** 获取指定日记 */
+//    @Override
+//    public void get(@NonNull String id, @NonNull DataCallback<Diary> callback) {
+//        Diary diary = LOCAL_DATA.get(id);
+//        if(diary != null){
+//            callback.onSuccess(diary);
+//        }else{
+//            callback.onError();
+//        }
+//    }
+
     @Override
-    public void getAll(@NonNull DataCallback<List<Diary>> callback) {
-        if(LOCAL_DATA.isEmpty()){
-            callback.onError();
-        }else {
-            callback.onSuccess(new ArrayList<>(LOCAL_DATA.values()));
-        }
+    public Flowable<List<Diary>> getAll() {
+        return Flowable.fromIterable(LOCAL_DATA.values())
+                .toList()
+                .toFlowable();
     }
 
-    /** 获取指定日记 */
     @Override
-    public void get(@NonNull String id, @NonNull DataCallback<Diary> callback) {
+    public Flowable<Diary> get(@NonNull String id) {
         Diary diary = LOCAL_DATA.get(id);
         if(diary != null){
-            callback.onSuccess(diary);
-        }else{
-            callback.onError();
+            return Flowable.just(diary);
+        }else {
+            return Flowable.empty();
         }
     }
 
