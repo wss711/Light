@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/mvcnote" />
             <option value="$PROJECT_DIR$/mvp" />
+            <option value="$PROJECT_DIR$/wssrxandroid" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
