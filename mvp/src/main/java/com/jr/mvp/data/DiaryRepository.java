@@ -62,7 +62,6 @@ public class DiaryRepository implements DataSource<Diary> {
     @Override
     public Flowable<Diary> get(@NonNull String id) {
         Diary cachedDiary = getDiaryByIdFromMemory(id);
-
         // 内存中存在此实例
         if(cachedDiary != null){
             return Flowable.just(cachedDiary);

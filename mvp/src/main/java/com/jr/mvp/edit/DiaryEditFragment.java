@@ -42,12 +42,12 @@ public class DiaryEditFragment extends Fragment implements DiaryEditContract.Vie
     @Override
     public void onResume() {
         super.onResume();
-        mPresenter.start();
+        mPresenter.subscribe();
     }
 
     @Override
     public void onDestroy() {
-        mPresenter.destroy();
+        mPresenter.unSubscribe();
         super.onDestroy();
     }
 

@@ -10,6 +10,13 @@ import com.jr.mvp.data.source.DataCallback;
 import com.jr.mvp.data.source.DataSource;
 import com.jr.mvp.model.Diary;
 
+import io.reactivex.Flowable;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+
 /**
  * TODO
  * <p>
@@ -20,11 +27,13 @@ public class DiaryEditPresenter implements DiaryEditContract.Presenter {
     private final DataSource<Diary> mDiaryRepository;
     private final DiaryEditContract.View mView;
     private String mDiaryId;
+    CompositeDisposable mCompositeDisposable;
 
     public DiaryEditPresenter(@NonNull DiaryEditContract.View addDiaryView, @NonNull String mDiaryId) {
         this.mView = addDiaryView;
         this.mDiaryId = mDiaryId;
         mDiaryRepository = DiaryRepository.getInstance();
+        mCompositeDisposable = new CompositeDisposable();
     }
 
     @Override
@@ -54,37 +63,60 @@ public class DiaryEditPresenter implements DiaryEditContract.Presenter {
             return;
         }
 
-        mDiaryRepository.get(mDiaryId, new DataCallback<Diary>() {
-            @Override
-            public void onSuccess(Diary diary) {
-                if(!mView.isActive()){
-                    return;
-                }
-                mView.setTitle(diary.getTitle());
-                mView.setDescription(diary.getDescription());
-            }
+        mCompositeDisposable.clear();
+        Disposable disposable = mDiaryRepository
+                .get(mDiaryId)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    diary ->{
+                        if(diary != null) {
+                            if (!mView.isActive()) {
+                                return;
+                            }
+                            mView.setTitle(diary.getTitle());
+                            mView.setDescription(diary.getDescription());
+                        }
+                        else{
+                            if(!mView.isActive()){
+                                return;
+                            }
+                            mView.showError();
+                        }
+                    });
 
-            @Override
-            public void onError() {
-                if(!mView.isActive()){
-                    return;
-                }
-                mView.showError();
-            }
-        });
+        mCompositeDisposable.add(disposable);
+//        mDiaryRepository.get(mDiaryId, new DataCallback<Diary>() {
+//            @Override
+//            public void onSuccess(Diary diary) {
+//                if(!mView.isActive()){
+//                    return;
+//                }
+//                mView.setTitle(diary.getTitle());
+//                mView.setDescription(diary.getDescription());
+//            }
+//
+//            @Override
+//            public void onError() {
+//                if(!mView.isActive()){
+//                    return;
+//                }
+//                mView.showError();
+//            }
+//        });
     }
-
     @Override
-    public void start() {
+    public void subscribe() {
         requestDiary();
     }
 
     @Override
-    public void destroy() {
-
+    public void unSubscribe() {
+        mCompositeDisposable.clear();
     }
 
     private boolean isAddDiary(){
         return TextUtils.isEmpty(mDiaryId);
     }
+
 }

@@ -12,6 +12,13 @@ import com.jr.mvp.model.Diary;
 
 import java.util.List;
 
+import io.reactivex.Flowable;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+
 /**
  * TODO
  * <p>
@@ -22,42 +29,59 @@ public class DiaryPresenter implements DiaryContract.Presenter{
     private final DiaryRepository mDiaryRepository;
     private final DiaryContract.View mView;
     private DiaryAdapter mDiaryAdapter;
+    private CompositeDisposable mCompositeDisposable;
 
     public DiaryPresenter(@NonNull DiaryContract.View diaryFragment){
         mDiaryRepository = DiaryRepository.getInstance();
         mView = diaryFragment;
+        mCompositeDisposable = new CompositeDisposable();
     }
 
     @Override
-    public void start() {
+    public void subscribe() {
         initAdapter();
         loadDiary();
     }
 
     @Override
-    public void destroy() {
-
+    public void unSubscribe() {
+        mCompositeDisposable.clear();
     }
 
     @Override
     public void loadDiary() {
-        mDiaryRepository.getAll(new DataCallback<List<Diary>>() {
-            @Override
-            public void onSuccess(List<Diary> diaryList) {
-                if(!mView.isActive()){
-                    return;
-                }
-                updateDiaryList(diaryList);
-            }
 
-            @Override
-            public void onError() {
-                if(!mView.isActive()){
-                    return;
-                }
-                mView.showError();
-            }
-        });
+        mCompositeDisposable.clear();
+        // 数据获取成功，处理数据
+        Disposable disposable = mDiaryRepository
+                .getAll()
+                .flatMap(Flowable::fromIterable)
+                .toList()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        this::updateDiaryList,
+                        throwable -> mView.showError());
+
+        mCompositeDisposable.add(disposable);
+
+//        mDiaryRepository.getAll(new DataCallback<List<Diary>>() {
+//            @Override
+//            public void onSuccess(List<Diary> diaryList) {
+//                if(!mView.isActive()){
+//                    return;
+//                }
+//                updateDiaryList(diaryList);
+//            }
+//
+//            @Override
+//            public void onError() {
+//                if(!mView.isActive()){
+//                    return;
+//                }
+//                mView.showError();
+//            }
+//        });
     }
 
     @Override

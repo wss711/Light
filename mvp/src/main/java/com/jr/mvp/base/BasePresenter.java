@@ -8,8 +8,8 @@ package com.jr.mvp.base;
 public interface BasePresenter {
 
     // Presenter 生命周期的开始
-    void start();
+    void subscribe();
 
     // Presenter 生命周期的结束
-    void destroy();
+    void unSubscribe();
 }

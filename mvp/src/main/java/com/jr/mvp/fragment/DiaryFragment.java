@@ -50,12 +50,12 @@ public class DiaryFragment extends Fragment implements DiaryContract.View {
     @Override
     public void onResume() {
         super.onResume();
-        mPresenter.start();
+        mPresenter.subscribe();
     }
 
     @Override
     public void onDestroy() {
-        mPresenter.destroy();
+        mPresenter.unSubscribe();
         super.onDestroy();
     }
 
