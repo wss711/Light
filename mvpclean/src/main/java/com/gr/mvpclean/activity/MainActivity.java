@@ -1,8 +1,10 @@
-package com.gr.mvpclean;
+package com.gr.mvpclean.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.gr.mvpclean.R;
 
 public class MainActivity extends AppCompatActivity {
 
