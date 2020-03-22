@@ -56,6 +56,7 @@ public abstract class UseCase<Q,P> {
         void onSuccess(P response);
 
         void onError();
+
     }
 
 }

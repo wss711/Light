@@ -20,5 +20,4 @@ public interface DataSource<T> {
     void clear();
 
     void delete(@NonNull String id);
-
 }

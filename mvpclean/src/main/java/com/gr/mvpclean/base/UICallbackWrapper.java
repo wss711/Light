@@ -3,7 +3,7 @@ package com.gr.mvpclean.base;
 import com.gr.mvpclean.utils.ThreadUtils;
 
 /**
- * TODO
+ * TODO UI线程切换处理包装类
  * <p>
  * Created by WSS on  2020-03-21
  **/
