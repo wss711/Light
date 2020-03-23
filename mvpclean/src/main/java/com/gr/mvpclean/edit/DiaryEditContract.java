@@ -17,7 +17,7 @@ public interface DiaryEditContract {
 
         void showDiaryList();
 
-        void setTitle();
+        void setTitle(String title);
 
         void setDescription(String description);
 
