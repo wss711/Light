@@ -8,7 +8,9 @@ import android.util.Log;
  * Created by WSS on  2020-03-07
  **/
 public class Student {
+
     private final String TAG = "callback";
+
     public void resolveQuestion(Callback callback){
 
         try {

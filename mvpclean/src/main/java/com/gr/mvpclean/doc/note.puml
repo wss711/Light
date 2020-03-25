@@ -1,0 +1,109 @@
+@startuml
+
+class Diary{
+    - id : String;
+    - title : String;
+    - description : String;
+    + Diary(String title, String description)
+    + Diary(String title, String description, String id)
+    + getId() : String
+    + getTitle() : String
+    + getDescription() : String
+    + setTitle(String title) : void
+    + setDescription(String description) : void
+}
+
+interface DataSource<T>{
+     getAll(DataCallback<List<T>> callback) : void
+     get(String id,DataCallback<T> callback) : void
+     update(T diary) : void
+     clear() : void
+     delete(String id) : void
+}
+interface DataCallback<T>{
+     onSuccess(T data) : void
+     onError() : void
+}
+
+class MockDiary{
+    -DESCRIPTION : static final String
+    + {static} mock() ： Map<String, Diary>
+    + {static} mock(Map<String, Diary> data) ： Map<String, Diary>
+    - {static}getDiary(String title) ： Diary
+}
+
+class DiariesLocalDataSource{
+    - {static} DIARY_DATA  final String
+    - {static} ALL_DIARY ： final String
+    - {static} mSpUtils ： SharedPreferencesUtils
+    - {static} LOCAL_DATA : Map<String, Diary>
+    - {static} mInstance ： volatile DiariesLocalDataSource
+    + {static} getInstance() ： DiariesLocalDataSource
+    + getAll(final DataCallback<List<Diary>> callback) ： void
+    + get(final String id, final DataCallback<Diary> callback) ： void
+    + update(final Diary diary) ： void
+    + clear() : void
+    + delete(final String id) : void
+    - DiariesLocalDataSource()
+    - obj2Json() : String
+    - json2Obj(String diaryStr) : LinkedHashMap<String, Diary>
+}
+class DiariesRepository{
+    - {static} mInstance : volatile DiariesRepository
+    - mLocalDataSource : final DataSource<Diary>
+    - mMemoryCache : Map<String, Diary>
+    + {static} getInstance() : DiariesRepository
+    + getAll(final DataCallback<List<Diary>> callback) ： void
+    + get(final String id, final DataCallback<Diary> callback) ： void
+    + update(final Diary diary) ： void
+    + clear() : void
+    + delete(final String id) : void
+    - DiariesRepository()
+    - updateMemoryCache(List<Diary> diaryList) : void
+    - getDiaryByIdFromMemory(String id) : Diary
+}
+
+class SharedPreferencesUtils{
+    - mCaches : static final SimpleArrayMap<String, SharedPreferencesUtils>
+    - SharedPreferencesUtils(final String spName, final int mode)
+    + getInstance(String spName) : SharedPreferencesUtils
+    put(final String key, final String value):void
+    get(final String key) : String
+    remove(final String key) : void
+}
+
+class GsonUtils{
+    - GSON : static final Gson
+    + {static} toJson(final Object object) : String
+    + {static} fromJson(final String json, final Type type) : <T> T
+    - {static} createGson() : Gson
+}
+
+class CollectionUtils {
+    + {static} isEmpty(Map map) : boolean
+}
+
+class LinkedHashMap
+
+
+DataSource ..> DataCallback
+
+DiariesLocalDataSource ..|> DataSource
+DiariesLocalDataSource --> SharedPreferencesUtils
+DiariesLocalDataSource --> GsonUtils
+DiariesLocalDataSource --o Diary
+
+MockDiary --o Diary
+
+DiariesRepository --> Diary
+DiariesRepository --o DiariesLocalDataSource
+DiariesRepository --o LinkedHashMap
+DiariesRepository ..> CollectionUtils
+
+
+
+
+
+
+
+@enduml
